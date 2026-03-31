@@ -155,39 +155,106 @@ Write a 2–3 paragraph "The Gap [Company] Can Own" insight. Name:
 
 ## Phase 3: Positioning Canvas
 
-Use everything from Phase 1 and Phase 2 to build the canvas.
+Use everything from Phase 1 and Phase 2 to build the canvas. Produce all 11 sections in order.
 
-**1. Category Name (3–4 options)**
-- 3–5 words that communicate what kind of company this is
-- Signal the most important differentiator
-- Avoid labels that every competitor also uses
+---
 
-**2. Core Positioning Idea (1 paragraph)**
-The single insight that drives all messaging. Usually comes from Q5 (the sales conversation answer). Name it explicitly so the user can reference it internally.
+**1. Category Name**
 
-**3. Ideal Customer Profile**
-- Customer type / company type
-- Size or revenue range
-- Vertical focus (or explicitly "any vertical")
-- What they have / don't have internally
-- Buying trigger
-- Decision-maker profile
+3–4 options. Each should be 3–5 words that communicate what kind of company or product this is. Signal the most important differentiator. Avoid labels every competitor also uses — if "agency," "platform," or "solution" are invisible in this space, find a more ownable label.
 
-**4. The Problem We Solve**
-Framed from the customer's perspective. Specific frustrations, not generic category pain.
+---
 
-**5. Three Messaging Pillars**
-One paragraph each. Label 01, 02, 03. Distinct angles — don't repeat the same idea three ways.
+**2. ICP — Company Profile**
 
-**6. Shared Enemy**
-What do all competitors position against? Name it. Explain why positioning against the same enemy is correct — buyers already resent it.
+Describe the ideal company to sell to:
+- Company type and ownership structure
+- Revenue range or headcount
+- Industry / vertical (or "any vertical" if truly broad)
+- Internal capabilities they have and don't have (be specific — not "no team" but "no dedicated [function]")
+- Buying trigger: what just happened in their business that makes them ready to buy now
 
-**7. Hero Headline Options (5 variations)**
-- Option A: Leads with the core positioning idea
-- Option B: Customer outcome or transformation
-- Option C: Anti-incumbent (vs. the shared enemy)
-- Option D: Discovery or process framing
-- Option E: Bold category claim
+---
+
+**3. ICP — Buyer Persona**
+
+Describe the individual who champions and closes the purchase:
+- Job title and level
+- What they're responsible for
+- What they're measured on (what makes them look good or bad)
+- Their relationship to the problem (do they feel it daily, or is it a strategic concern?)
+- Decision-making role: sole buyer, champion, committee member
+
+---
+
+**4. Use Cases**
+
+List the specific scenarios where this product or service gets used. Each use case should be a one-sentence job: "When [situation], the customer uses [product] to [outcome]."
+
+Aim for 3–6 use cases. These should be distinct — don't list the same use case in different words.
+
+---
+
+**5. Capabilities**
+
+What the product or service can do — the functional abilities that enable the use cases. Write as active statements ("Scrapes competitor sites and extracts positioning signals") not feature labels ("Competitor scraping").
+
+Capabilities are broader than features — they describe what becomes possible, not just what exists.
+
+---
+
+**6. Competitive Alternatives**
+
+What does the buyer do instead of using this? List all real alternatives — these may include:
+- Direct competitors (named companies in the same category)
+- Category alternatives (a different type of solution solving the same problem)
+- Legacy processes (spreadsheets, email, manual workflows)
+- In-house approaches (hiring someone, building it internally)
+- Doing nothing (the status quo)
+
+For each alternative, name it specifically. This list is the foundation for differentiation.
+
+---
+
+**7. Shortcomings of Competitive Alternatives**
+
+For each alternative listed in section 6, identify the key shortcoming — the specific reason a buyer who has tried or considered it would still be looking for something better. Pull from Phase 2 battle card research where possible. Focus on shortcomings the target buyer actually experiences and cares about, not theoretical weaknesses.
+
+---
+
+**8. First-Order Benefits**
+
+The direct, immediate benefits a customer experiences after starting to use the product or service. These are felt quickly — within the first session, week, or engagement. Frame from the customer's perspective.
+
+Examples: "Stops spending 3 hours manually researching each competitor." "Gets a clear positioning statement instead of a blank page."
+
+---
+
+**9. Business Outcomes**
+
+The higher-order results the customer achieves over time — what changes in their business, career, or competitive position as a result of the first-order benefits compounding. These are the outcomes a buyer is actually buying, even if they describe the product in functional terms.
+
+Examples: "Faster time to market on new products." "Sales team closes at a higher rate because messaging resonates." "Attracts higher-quality leads who are pre-sold on the value."
+
+---
+
+**10. Features / Services**
+
+The specific, nameable things the product or service includes. More concrete than capabilities — these are the deliverables or modules a customer would list if describing what they got.
+
+Format each as: **[Feature/Service Name]** — one-sentence description of what it is and what it does.
+
+---
+
+**11. Differentiators**
+
+What makes this product or service meaningfully better than the competitive alternatives on the dimensions that matter most to the buyer. Differentiators must be:
+- True (you can back it up)
+- Relevant (the buyer actually cares about this dimension)
+- Provable (you have evidence, not just a claim)
+- Owned (competitors can't credibly make the same claim right now)
+
+For each differentiator, name it, explain why it matters to the buyer, and state why the competition can't match it.
 
 ---
 
