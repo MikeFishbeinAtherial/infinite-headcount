@@ -55,4 +55,12 @@ npx skills@latest add MikeFishbeinAtherial/infinite-headcount
 
 ---
 
+## Customize with your own examples
+
+Skills get sharper when they know your brand. You can add a `references/` folder to any skill with markdown files containing your own copy examples, brand voice guidelines, or past work you want Claude to reference. The skill will use them as context when generating output.
+
+For example: drop a `references/brand-voice.md` with copy you've written that hits the right tone, and Claude will write in that direction instead of defaulting to generic.
+
+---
+
 Made by [@MikeFishbeinAtherial](https://github.com/MikeFishbeinAtherial)

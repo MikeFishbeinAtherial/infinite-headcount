@@ -181,7 +181,7 @@ For each feature:
 - Active voice throughout
 - Specific over general — numbers, timeframes, named processes beat vague claims
 - Lead with benefits, not features
-- See `references/copywriting-examples.md` for strong vs. weak examples
+- Add a `references/` folder with your own copy examples to calibrate the voice to your brand
 
 ---
 

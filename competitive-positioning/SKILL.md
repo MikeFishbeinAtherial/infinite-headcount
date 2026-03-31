@@ -278,7 +278,6 @@ Save the output as `[company-name]-positioning-canvas.html` (or `.md`) and share
 
 - `references/output-format.md` — HTML/CSS output format using the Atherial design system
 - `references/example-battle-card.md` — Annotated example of a completed battle card
-- `references/homepage-copy-examples.md` — Copy voice and style reference
 
 ---
 
