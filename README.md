@@ -19,6 +19,9 @@ Or copy any skill folder manually into `~/.claude/skills/`.
 ## Skills
 
 <!-- skills-list-start -->
+| Skill | Description | Install |
+|---|---|---|
+| [market-positioning](./market-positioning/) | Competitive intelligence and positioning strategy. Analyzes competitors, identifies positioning gaps, and produces messaging hierarchies and homepage or landing page copy. | `npx skills@latest add MikeFishbeinAtherial/infinite-headcount/market-positioning` |
 <!-- skills-list-end -->
 
 ---
