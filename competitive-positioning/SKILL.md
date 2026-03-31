@@ -8,25 +8,25 @@ triggers: positioning, competitive intelligence, competitive analysis, positioni
 
 Run a structured competitive intelligence and positioning exercise. Produces:
 1. Competitive battle cards for each competitor (scraped from live sites)
-2. A positioning canvas (category name, ICP, problem, messaging pillars, headline options)
+2. A positioning canvas (category name, ICP, problem, messaging pillars, headline options, and other positioning elements)
 
 Work through the three phases in order. Do not skip Phase 1 — the grilling is what makes the canvas sharp.
 
 ---
 
-## Phase 1: Context Gathering (Grill the User)
+## Phase 1: Context Gathering (inteview the User)
 
 Before touching competitor research, interview the user to build a full picture of their business. Ask one question at a time, provide a recommended answer hypothesis with each question, and resolve each before moving on.
 
 **Ask these questions in order, one at a time:**
 
 ### Q1 — ICP
-"When you picture the ideal customer — the one you'd clone 10 times — what do they do and what's the specific pain that makes them come to you?"
+"When you picture the ideal customer, the one you'd clone 10 times, what do they do and what's the specific pain that makes them come to you?"
 
 *Offer a hypothesis based on what you already know. Ask them to confirm or correct.*
 
 ### Q2 — Primary Transformation
-"When a customer finishes with your product or service and they're thrilled — what specifically changed for them?"
+"When a customer finishes with your product or service and they're thrilled, what specifically changed for them?"
 
 Offer multiple choice options tailored to what you know. General options:
 - They saved significant time or eliminated manual work
@@ -161,7 +161,7 @@ Use everything from Phase 1 and Phase 2 to build the canvas. Produce all 11 sect
 
 **1. Category Name**
 
-3–4 options. Each should be 3–5 words that communicate what kind of company or product this is. Signal the most important differentiator. Avoid labels every competitor also uses — if "agency," "platform," or "solution" are invisible in this space, find a more ownable label.
+3–4 options. Each should be 2–5 words that communicate what kind of company or product this is. Signal the most important differentiator. Avoid labels every competitor also uses — if "agency," "platform," or "solution" are invisible in this space, find a more ownable label.
 
 ---
 
@@ -191,7 +191,7 @@ Describe the individual who champions and closes the purchase:
 
 List the specific scenarios where this product or service gets used. Each use case should be a one-sentence job: "When [situation], the customer uses [product] to [outcome]."
 
-Aim for 3–6 use cases. These should be distinct — don't list the same use case in different words.
+Aim for 1–6 use cases. These should be distinct — don't list the same use case in different words.
 
 ---
 
@@ -260,23 +260,146 @@ For each differentiator, name it, explain why it matters to the buyer, and state
 
 ## Output Format
 
-If the Atherial design system skill is available, render as a styled HTML document with:
-- Dark sidebar with section navigation
-- Two sections: Competitor Analysis, Positioning Canvas
-- Battle cards using the card component
-- Comparison table using the table component
-- Canvas elements using pos-card (dark) components
-- See `references/output-format.md` for exact HTML patterns
+Always render as a self-contained HTML file with all styles inlined in a `<style>` block. No external dependencies. Use the design spec below exactly.
 
-Otherwise, output as clean structured markdown with clear section headers.
+Save as `[company-name]-positioning-canvas.html` and share with the user.
 
-Save the output as `[company-name]-positioning-canvas.html` (or `.md`) and share it.
+---
+
+### HTML Design Spec
+
+**Page layout:**
+- Background: `#0a0a0a`
+- Font: `system-ui, -apple-system, sans-serif`
+- Max content width: `1100px`, centered with `auto` margins
+- Fixed left sidebar (`240px` wide, `#111`, full height) with section nav links
+- Main content area with `32px` padding
+
+**Color palette:**
+- Background: `#0a0a0a`
+- Surface (cards): `#141414`
+- Surface elevated: `#1a1a1a`
+- Border: `#2a2a2a`
+- Text primary: `#f0f0f0`
+- Text secondary: `#888`
+- Accent: `#c8f135` (lime green)
+
+**Sidebar:**
+```html
+<aside style="position:fixed;top:0;left:0;width:240px;height:100vh;background:#111;border-right:1px solid #2a2a2a;padding:32px 20px;overflow-y:auto;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;color:#888;text-transform:uppercase;margin-bottom:4px;">[Company Name]</div>
+  <div style="font-size:13px;color:#f0f0f0;margin-bottom:32px;">Positioning Canvas</div>
+  <a href="#competitors" style="display:block;font-size:12px;color:#888;text-decoration:none;padding:6px 0;border-bottom:1px solid #1e1e1e;">01 — Competitors</a>
+  <a href="#canvas" style="display:block;font-size:12px;color:#888;text-decoration:none;padding:6px 0;border-bottom:1px solid #1e1e1e;">02 — Canvas</a>
+</aside>
+<main style="margin-left:240px;padding:48px 40px;max-width:860px;">
+```
+
+**Section divider:**
+```html
+<div style="display:flex;align-items:center;gap:12px;margin:48px 0 24px;">
+  <div style="width:3px;height:16px;background:#c8f135;"></div>
+  <span style="font-size:11px;font-weight:700;letter-spacing:0.12em;color:#888;text-transform:uppercase;">Section Title</span>
+</div>
+```
+
+**Battle card** (use a two-column grid for multiple cards: `display:grid;grid-template-columns:1fr 1fr;gap:16px`):
+```html
+<div style="background:#141414;border:1px solid #2a2a2a;padding:24px;border-radius:2px;">
+  <div style="font-size:13px;font-weight:700;color:#f0f0f0;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:4px;">COMPETITOR NAME</div>
+  <div style="font-size:11px;color:#888;margin-bottom:20px;">Category · ICP · Delivery model</div>
+
+  <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;color:#c8f135;text-transform:uppercase;margin-bottom:8px;">What they do well</div>
+  <ul style="margin:0 0 16px;padding-left:16px;font-size:12px;color:#ccc;line-height:1.7;">
+    <li>...</li>
+  </ul>
+
+  <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;color:#888;text-transform:uppercase;margin-bottom:8px;">Weaknesses</div>
+  <ul style="margin:0 0 16px;padding-left:16px;font-size:12px;color:#ccc;line-height:1.7;">
+    <li>...</li>
+  </ul>
+
+  <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;color:#888;text-transform:uppercase;margin-bottom:8px;">Memorable lines</div>
+  <div style="font-size:12px;color:#888;font-style:italic;margin-bottom:16px;">"exact quote"</div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;">
+    <span style="font-size:10px;font-weight:600;padding:3px 8px;border:1px solid #c8f135;color:#c8f135;letter-spacing:0.05em;">BADGE</span>
+    <span style="font-size:10px;font-weight:600;padding:3px 8px;border:1px solid #2a2a2a;color:#888;letter-spacing:0.05em;">BADGE</span>
+  </div>
+</div>
+```
+
+**Comparison table:**
+```html
+<div style="overflow-x:auto;margin:24px 0;">
+  <table style="width:100%;border-collapse:collapse;font-size:12px;">
+    <thead>
+      <tr style="border-bottom:2px solid #c8f135;">
+        <th style="text-align:left;padding:10px 12px;color:#888;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;">Dimension</th>
+        <th style="text-align:left;padding:10px 12px;color:#888;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;">Competitor A</th>
+        <th style="text-align:left;padding:10px 12px;color:#c8f135;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;">[Your Company]</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid #1e1e1e;">
+        <td style="padding:10px 12px;color:#888;">Dimension label</td>
+        <td style="padding:10px 12px;color:#ccc;">Value</td>
+        <td style="padding:10px 12px;color:#f0f0f0;font-weight:500;">Value</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+```
+
+**Canvas section block** (use for each of the 11 canvas elements):
+```html
+<div style="background:#141414;border:1px solid #2a2a2a;padding:24px;border-radius:2px;margin-bottom:12px;">
+  <div style="font-size:10px;font-weight:700;letter-spacing:0.12em;color:#c8f135;text-transform:uppercase;margin-bottom:8px;">Section Title</div>
+  <div style="font-size:13px;color:#f0f0f0;line-height:1.7;">Content here</div>
+</div>
+```
+
+For canvas sections with multiple items (like category name options or use cases), use a subtle inner list:
+```html
+<ul style="margin:8px 0 0;padding-left:18px;font-size:13px;color:#ccc;line-height:1.9;">
+  <li>Item one</li>
+  <li>Item two</li>
+</ul>
+```
+
+**Gap insight card** (for the gap analysis between Phase 2 and Phase 3):
+```html
+<div style="background:#0f1a00;border:1px solid #c8f135;padding:24px;border-radius:2px;margin:24px 0;">
+  <div style="font-size:10px;font-weight:700;letter-spacing:0.12em;color:#c8f135;text-transform:uppercase;margin-bottom:8px;">The Gap [Company] Can Own</div>
+  <div style="font-size:13px;color:#e0f0a0;line-height:1.8;">Insight text here</div>
+</div>
+```
+
+**Scroll + nav highlight script** (include before `</body>`):
+```html
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+  });
+});
+window.addEventListener('scroll', () => {
+  ['competitors','canvas'].forEach(id => {
+    const el = document.getElementById(id);
+    const link = document.querySelector(`a[href="#${id}"]`);
+    if (!el || !link) return;
+    const active = window.scrollY >= el.offsetTop - 80;
+    link.style.color = active ? '#f0f0f0' : '#888';
+  });
+});
+</script>
+```
 
 ---
 
 ## Reference Files
 
-- `references/output-format.md` — HTML/CSS output format using the Atherial design system
 - `references/example-battle-card.md` — Annotated example of a completed battle card
 
 ---
