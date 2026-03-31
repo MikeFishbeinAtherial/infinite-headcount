@@ -12,7 +12,7 @@ Write high-converting landing page copy that drives action. Produces a full stru
 
 Every landing page includes these sections in order:
 
-1. **Hero** — immediate value proposition
+1. **Hero** — immediate value proposition or capabilities 
 2. **Problem** — pain points and the cost of the status quo
 3. **Features & Benefits** — 3 core capabilities with specific outcomes
 4. **Who It's For** — self-selection signals that qualify and attract the right buyer
@@ -73,14 +73,14 @@ Always output valid JSON matching this exact schema:
 ### Hero Section
 
 **hero_header:**
-- Communicate the primary outcome or transformation
-- Lead with what changes for the customer
+- Communicate the primary outcome or benefits
+- Lead with what changes for the customer or new capabilities
 - Punchy, active, 6–12 words
 - No fluff verbs: not "streamline", "empower", "transform", "revolutionize"
 
 **hero_subheader:**
 - Who it's for + what they get + how it works
-- 1–2 sentences
+- 1 long sentence or 2 short sentences
 - Include a concrete outcome or time-saving if possible
 
 **hero_image_alt:**
@@ -98,7 +98,7 @@ Always output valid JSON matching this exact schema:
 **problem_subheader:**
 - Specific pain points with real consequences
 - Name what the reader has already tried (and why it didn't work)
-- 2–3 sentences
+- 2–3 short sentences
 
 ### Features & Benefits (3 features)
 
