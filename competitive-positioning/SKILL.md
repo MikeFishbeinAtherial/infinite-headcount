@@ -1,5 +1,5 @@
 ---
-name: market-positioning
+name: competitive-positioning
 description: "Run a full competitive positioning and intelligence exercise for any company or product. Use this skill whenever the user wants to research competitors, develop positioning or messaging, create a category name, define an ICP, write website or landing page copy, create competitive battle cards, or figure out how to differentiate a product or service. Also trigger when the user says things like 'help me position X', 'who are my competitors', 'what should our messaging be', 'help me figure out what makes us different', 'create a strategy doc for our website', or 'scrape competitor websites'. This skill replicates a full consulting-grade workflow: competitor scraping, battle cards, positioning framework, and homepage copy. Always use this skill when the request involves understanding a competitive landscape AND developing messaging or copy in response to it."
 triggers: positioning, messaging, homepage copy, landing page copy, competitive intelligence, competitive analysis, positioning statement, differentiation, brand strategy, market research
 ---
