@@ -10,16 +10,16 @@ Clone this repo and you have a marketing department.
 
 <!-- org-diagram-start -->
 ```
-                              ┌──────────────────────────────────┐
-                              │          interrogate-me           │
-                              │      run first for context        │
-                              └────────────────┬─────────────────┘
-                                               │
-              ┌────────────────────────────────┴────────────────────────────────┐
-              ▼                                                                 ▼
-┌─────────────────────────────┐                             ┌─────────────────────────────┐
-│   competitive-positioning   │                             │      landing-page-copy       │
-└─────────────────────────────┘                             └─────────────────────────────┘
+                                       ┌─────────────────┐
+                                       │       YOU        │
+                                       └────────┬─────────┘
+                                                │
+          ┌─────────────────────────────────────┼─────────────────────────────────┐
+          ▼                                     ▼                                 ▼
+┌─────────────────────────────┐   ┌─────────────────────────────┐   ┌─────────────────────────────┐
+│      interrogate-me         │   │  competitive-positioning     │   │     landing-page-copy       │
+└─────────────────────────────┘   └─────────────────────────────┘   └─────────────────────────────┘
+  · · use with any skill · ·                · · · · · · · · · · · · · · · ↗  common next step
 ```
 <!-- org-diagram-end -->
 
@@ -31,7 +31,7 @@ Clone this repo and you have a marketing department.
 | Skill | Description | Install |
 |---|---|---|
 | [competitive-positioning](./competitive-positioning/) | 3-phase competitive intelligence sprint. Scrapes competitors, builds battle cards, and produces a full positioning canvas. | `npx skills@latest add MikeFishbeinAtherial/infinite-headcount/competitive-positioning` |
-| [interrogate-me](./interrogate-me/) | 8-question marketing intake. Extracts ICP, differentiator, brand voice, and goal — outputs a reusable Marketing Brief. Run before any content, copy, or strategy work. | `npx skills@latest add MikeFishbeinAtherial/infinite-headcount/interrogate-me` |
+| [interrogate-me](./interrogate-me/) | Adaptive context interview. Reads what you're working on, identifies the gaps, and asks the right questions — one at a time, with a hypothesis. Marketing-aware but general purpose. Use with any skill. | `npx skills@latest add MikeFishbeinAtherial/infinite-headcount/interrogate-me` |
 | [landing-page-copy](./landing-page-copy/) | Write conversion-focused landing page copy for any product or service. Outputs structured JSON covering hero, problem, features, who it's for, social proof, and CTA. | `npx skills@latest add MikeFishbeinAtherial/infinite-headcount/landing-page-copy` |
 <!-- skills-list-end -->
 

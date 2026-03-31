@@ -1,74 +1,91 @@
 ---
 name: interrogate-me
-description: Run a focused marketing context interview to give Claude what it needs to do great work. Covers the business, ideal customer, differentiator, and brand voice in 8 questions. Use this before any marketing task when Claude doesn't have enough context — content, copy, campaigns, strategy, or positioning. Trigger when the user says "interrogate me", "interview me", "brief me", "ask me questions", or when you need context before starting a task.
-triggers: interrogate me, interview me, brief me, ask me questions, get context, marketing intake, onboard me, what do you need to know
+description: Ask the user smart questions to build shared understanding before starting any task. Reads existing context, identifies what's missing or unclear, and asks one question at a time — with a hypothesis — until Claude has what it needs to do excellent work. Marketing-aware but general purpose. Use when the user wants to think through a plan, needs to give Claude context, or says things like "interrogate me", "ask me questions", "brief me", "what do you need to know", or "help me think this through".
+triggers: interrogate me, ask me questions, brief me, what do you need to know, help me think this through, interview me, get context, make a plan
 ---
 
 # Interrogate Me
 
-Get the context needed to do sharp marketing work. Eight questions. One at a time. For each, offer a best-guess hypothesis — the user confirms, corrects, or adds detail.
+Before starting work, get clarity. Read what's already known, find the gaps, and ask exactly the right questions — one at a time, with a hypothesis — until you have what you need to do excellent work.
 
-Skip any question already answered by context in the conversation.
-
-At the end, produce a compact Marketing Brief the user can save for future sessions.
+This is not a fixed questionnaire. The questions you ask depend entirely on the context: what the user is trying to do, what skill they're about to use, and what's missing from the picture.
 
 ---
 
-## The Questions
+## How to Run This
 
-### Q1 — What You Do
-"In one sentence: what does [company/product] do, and who is it for?"
+**Step 1 — Read the context.**
 
-*Hypothesis: "[Company] helps [type of person] [achieve outcome] by [doing what]." — confirm or rewrite.*
+Before asking anything, scan what you already know:
+- What task or project is the user working on?
+- What skill or output are they heading toward?
+- What has already been said in this conversation?
+- Is there a CLAUDE.md, project brief, or any other context in scope?
 
-### Q2 — The Problem
-"What specific situation is the customer in right before they find you? Not the category-level problem — the frustrating, specific moment."
+Do not ask about things you already know. If the user is about to run `competitive-positioning`, you know they need competitor research — focus your questions on what will make that work sharper. If they're writing content, lean toward audience and voice. If it's genuinely unclear, ask broader questions first.
 
-*Hypothesis: Frame it from the customer's perspective. The more specific, the more useful for copy.*
+**Step 2 — Identify the most important gap.**
 
-### Q3 — Ideal Customer
-"Who is the person who actually buys? Job title, company type, size. And what's the trigger — what just happened in their world that made them start looking?"
+Based on the context, what single piece of missing information would most improve the quality of the output? That's your first question.
 
-*Hypothesis: Offer a specific profile based on what you know. Ask them to adjust it.*
+Common gaps for marketing work:
+- Who exactly is the target customer (not category — specific person, specific pain)
+- What outcome the customer is actually buying (not the feature — the life change)
+- What makes this different from the obvious alternative
+- What the brand sounds like — and what it should never sound like
+- What success looks like for this specific task
+- What's been tried before and why it didn't work
 
-### Q4 — What Makes You Different
-"What can you credibly claim that your closest competitor can't? Not aspirationally — right now, specifically."
+**Step 3 — Ask one question at a time. Provide a hypothesis.**
 
-*If they struggle, ask: "What do customers say when they refer you? What's the thing they mention first?"*
+Format every question the same way:
+1. Ask the question directly
+2. Follow immediately with your best guess: *"My hypothesis: [specific, informed answer]. Confirm, correct, or expand."*
 
-### Q5 — What Customers Say
-"What exact words or phrases do your best customers use when they describe what you do for them? Quotes, reviews, testimonials — anything verbatim."
+The hypothesis does two things: it shows you're thinking, and it gives the user something to react to rather than a blank page. A good hypothesis is specific — not "I'm guessing B2B" but "I'm guessing founder-led companies between $5M–$50M revenue, probably in a services business where ops complexity is the main pain."
 
-*This is the most useful question for copy. Their language beats your language every time.*
+**Step 4 — Keep going until you have enough.**
 
-### Q6 — Brand Voice
-"Three adjectives that describe how you sound. And one brand or person whose voice you admire — what do you like about it?"
+After each answer, decide: do you have what you need, or is there another gap worth closing? Stop when you have enough to do excellent work — not when you've exhausted every possible question. 3–6 questions is usually right. More than 8 is almost always too many.
 
-### Q7 — What to Avoid
-"Words, phrases, or tones that make you cringe when you see them in competitor copy. What does bad sound like in your space?"
+**Step 5 — Produce a brief, then get to work.**
 
-### Q8 — What We're Working On
-"What's the specific task you want to tackle today? And what does a great output look like — format, length, channel, audience?"
+When you have enough, summarize what you've learned in a compact brief:
+
+```
+## Context Brief
+
+**What we're doing:** [task or output]
+**For:** [who — specific, not generic]
+**The problem or goal:** [specific]
+**Key differentiator or angle:** [what makes this sharp]
+**Voice / tone:** [how it should sound, what to avoid]
+**Success looks like:** [concrete]
+**Anything to avoid:** [constraints, prior attempts, red lines]
+```
+
+Only include fields that are relevant — don't force every field if some don't apply. Keep it short enough to be useful at a glance.
+
+Then immediately move into the task.
 
 ---
 
-## Output: Marketing Brief
+## What Makes a Good Question
 
-After all questions, produce this brief. Keep it tight — it's a reference card, not a document.
+- **Specific, not general.** "What's the specific moment a customer realizes they need this?" beats "Who's your target customer?"
+- **Gap-filling, not box-checking.** Ask what you actually need to know, not what a template says to ask.
+- **One thing at a time.** Never combine two questions into one.
+- **Hypothesis first.** Always bring a best guess. It respects the user's time and anchors the conversation.
 
-```
-# Marketing Brief — [Company Name]
+## What Makes a Bad Question
 
-One-liner: [what it does and who it's for]
-Problem: [specific customer frustration]
-ICP: [buyer profile + buying trigger]
-Differentiator: [credible claim competitors can't make]
-Customer language: "[verbatim quote or phrase]"
-Voice: [3 adjectives] — sounds like [reference]
-Never: [words/tones to avoid]
-Working on: [today's task]
-```
+- Asking something already answered in the context
+- Asking something that doesn't affect the quality of the output
+- Asking multiple things at once
+- Asking open-ended questions with no hypothesis — "Tell me about your customers" is not a question, it's homework
 
-Tell the user to save this brief and paste it into any future Claude session to skip the intake next time.
+---
 
-Then move immediately into the task from Q8.
+## Tone
+
+Confident and direct. This is a working session, not an intake form. Move fast. Think out loud. The goal is shared understanding — not a complete document.
