@@ -1,6 +1,6 @@
 # infinite-headcount
 
-Marketing skills for Claude Code Claude, and AI agents. Copywriting, Positioning, SEO, content strategy, design, and more coming soon.
+Marketing skills for Claude Code, Claude, and AI agents. Copywriting, Positioning, SEO, content strategy, design, and more coming soon.
 
 Clone this repo and you have a marketing department.
 
