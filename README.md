@@ -10,16 +10,22 @@ Clone this repo and you have a marketing department.
 
 <!-- org-diagram-start -->
 ```
-                                       ┌─────────────────┐
-                                       │       YOU        │
-                                       └────────┬─────────┘
-                                                │
-          ┌─────────────────────────────────────┼─────────────────────────────────┐
-          ▼                                     ▼                                 ▼
-┌─────────────────────────────┐   ┌─────────────────────────────┐   ┌─────────────────────────────┐
-│      interrogate-me         │   │  competitive-positioning     │   │     landing-page-copy       │
-└─────────────────────────────┘   └─────────────────────────────┘   └─────────────────────────────┘
-  · · use with any skill · ·                · · · · · · · · · · · · · · · ↗  common next step
+                                                   ┌─────────────────┐
+                                                   │       YOU        │
+                                                   └────────┬─────────┘
+                                                            │
+     ┌──────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┐
+     ▼                                                      ▼                                                      ▼
+┌───────────────────────────────┐          ┌───────────────────────────────┐          ┌───────────────────────────────┐
+│        interrogate-me         │          │    competitive-positioning     │          │       landing-page-copy       │
+└───────────────────────────────┘          └───────────────────────────────┘          └───────────────────────────────┘
+  · · use with any skill · ·                        · · · · · · · · · · · · · · · · · · · · ↗  common next step
+
+┌───────────────────────────────┐
+│        eng-ghostwriter        │
+│  runs independently on a      │
+│  schedule or on demand        │
+└───────────────────────────────┘
 ```
 <!-- org-diagram-end -->
 
@@ -31,6 +37,7 @@ Clone this repo and you have a marketing department.
 | Skill | Description | Install |
 |---|---|---|
 | [competitive-positioning](./competitive-positioning/) | 3-phase competitive intelligence sprint. Scrapes competitors, builds battle cards, and produces a full positioning canvas. | `npx skills@latest add MikeFishbeinAtherial/infinite-headcount/competitive-positioning` |
+| [eng-ghostwriter](./eng-ghostwriter/) | Automatically generates 2-3 social post drafts about recent engineering work by mining Claude Code session transcripts and git commits. Runs on demand or on a daily schedule. Pushes output to a shared GitHub repo. | `npx skills@latest add MikeFishbeinAtherial/infinite-headcount/eng-ghostwriter` |
 | [interrogate-me](./interrogate-me/) | Adaptive context interview. Reads what you're working on, identifies the gaps, and asks the right questions — one at a time, with a hypothesis. Marketing-aware but general purpose. Use with any skill. | `npx skills@latest add MikeFishbeinAtherial/infinite-headcount/interrogate-me` |
 | [landing-page-copy](./landing-page-copy/) | Write conversion-focused landing page copy for any product or service. Outputs structured JSON covering hero, problem, features, who it's for, social proof, and CTA. | `npx skills@latest add MikeFishbeinAtherial/infinite-headcount/landing-page-copy` |
 <!-- skills-list-end -->
