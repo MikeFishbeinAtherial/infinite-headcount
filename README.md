@@ -40,6 +40,7 @@ Clone this repo and you have a marketing department.
 | [eng-ghostwriter](./eng-ghostwriter/) | Automatically generates 2-3 social post drafts about recent engineering work by mining Claude Code session transcripts and git commits. Runs on demand or on a daily schedule. Pushes output to a shared GitHub repo. | `npx skills@latest add MikeFishbeinAtherial/infinite-headcount/eng-ghostwriter` |
 | [interrogate-me](./interrogate-me/) | Adaptive context interview. Reads what you're working on, identifies the gaps, and asks the right questions — one at a time, with a hypothesis. Marketing-aware but general purpose. Use with any skill. | `npx skills@latest add MikeFishbeinAtherial/infinite-headcount/interrogate-me` |
 | [landing-page-copy](./landing-page-copy/) | Write conversion-focused landing page copy for any product or service. Outputs structured JSON covering hero, problem, features, who it's for, social proof, and CTA. | `npx skills@latest add MikeFishbeinAtherial/infinite-headcount/landing-page-copy` |
+| [global-mermaid](./global-mermaid/) | Generate flexible, brand-aligned Mermaid diagrams for social posts, documentation, and general use. Uses the beautiful-mermaid renderer with Atherial styling and diagonal backgrounds. Note: requires `beautiful-mermaid` to be installed/available. | `npx skills@latest add MikeFishbeinAtherial/infinite-headcount/global-mermaid` |
 <!-- skills-list-end -->
 
 ---
