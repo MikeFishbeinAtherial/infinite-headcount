@@ -10,7 +10,7 @@ Turn engineering work in the current repository into polished post drafts. Read 
 
 Output is a markdown file at `content/eng-drafts/YYYY-MM-DD-[short-slug].md` in the current repository.
 
-> **Privacy rule:** stay inside the current repository. Do not read chat/session transcripts, inspect sibling repositories, or push/commit the generated draft. Before writing, ask what must be excluded from public content.
+> **Privacy rule:** your sources are the conversation you are currently in and the current repository — nothing else. Do not read stored session-transcript files (`~/.claude/projects/**`), inspect sibling repositories, or push/commit the generated draft. Before writing, ask what must be excluded from public content.
 
 ---
 
@@ -22,7 +22,7 @@ Confirm the current repository is the project the user wants to write about. Ask
 
 ## Step 1 — Discover What Was Built
 
-Inspect only the current repository:
+Start with what's already in this conversation — if the user just built something with you in this thread, that is the primary source. Then inspect the current repository:
 
 ```bash
 git status --short
