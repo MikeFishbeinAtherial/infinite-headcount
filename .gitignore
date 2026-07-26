@@ -1,0 +1,14 @@
+*.skill
+.env
+.env.local
+.env.*.local
+*/.env
+*/.env.local
+*/.env.*.local
+node_modules/
+demo-video-out/
+.DS_Store
+*-session.json
+storage-state*.json
+.claude/
+out/

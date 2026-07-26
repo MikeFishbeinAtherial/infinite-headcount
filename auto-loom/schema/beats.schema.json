@@ -1,0 +1,225 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/MikeFishbeinAtherial/infinite-headcount/auto-loom/schema/beats.schema.json",
+  "title": "auto-loom beats file (v3)",
+  "description": "Storyboard for a narrated demo video. Audio duration is ground truth.",
+  "type": "object",
+  "required": [
+    "beats"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Human title for the video"
+        },
+        "slug": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$",
+          "description": "Output folder / file slug"
+        },
+        "persona": {
+          "type": "string",
+          "description": "Who the narration addresses (named prospect or persona)"
+        },
+        "cta": {
+          "type": "string",
+          "description": "The call to action the final beat must deliver"
+        },
+        "targetLengthSec": {
+          "type": "number",
+          "minimum": 10,
+          "maximum": 600
+        }
+      }
+    },
+    "baseUrl": {
+      "type": "string",
+      "description": "Origin the beat pages are relative to, e.g. https://app.example.com or http://localhost:3000"
+    },
+    "viewport": {
+      "type": "object",
+      "required": [
+        "width",
+        "height"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "width": {
+          "type": "integer",
+          "minimum": 320
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 240
+        }
+      }
+    },
+    "storageState": {
+      "type": "string",
+      "description": "Path (relative to this file) to a Playwright storage-state JSON captured via `npx playwright codegen --save-storage=...`. Treat as a credential; never commit."
+    },
+    "auth": {
+      "type": "object",
+      "description": "Scripted login. v2 shape: loginUrl + steps + success. Legacy shape {loginUrl, email, password} is auto-mapped.",
+      "additionalProperties": false,
+      "properties": {
+        "loginUrl": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "description": "LEGACY \u2014 prefer steps with env: values"
+        },
+        "password": {
+          "type": "string",
+          "description": "LEGACY \u2014 prefer steps with env: values"
+        },
+        "steps": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "fill": {
+                "type": "string",
+                "description": "CSS selector of an input to fill"
+              },
+              "value": {
+                "type": "string",
+                "description": "Literal value, or \"env:VAR_NAME\" to read from the environment"
+              },
+              "click": {
+                "type": "string",
+                "description": "CSS selector of an element to click"
+              },
+              "waitMs": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        },
+        "success": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "urlGlob": {
+              "type": "string",
+              "description": "URL glob that confirms login, e.g. **/dashboard**"
+            },
+            "sel": {
+              "type": "string",
+              "description": "Selector only present when authenticated, e.g. [data-user-menu]"
+            }
+          }
+        },
+        "loginDetect": {
+          "type": "string",
+          "description": "Substring/regex of URLs that mean 'we got bounced to a login page'. Default heuristic: sign-in|signin|login|log-in|auth"
+        }
+      }
+    },
+    "voice": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "voiceId": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string",
+          "description": "ElevenLabs model_id, e.g. eleven_multilingual_v2 (default, stable) or eleven_v3 (more expressive, supports inline audio tags like [exhales])"
+        },
+        "settings": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Overrides the default voice_settings (stability 0.5, similarity_boost 0.8, style 0.2)",
+          "properties": {
+            "stability": { "type": "number", "minimum": 0, "maximum": 1 },
+            "similarity_boost": { "type": "number", "minimum": 0, "maximum": 1 },
+            "style": { "type": "number", "minimum": 0, "maximum": 1 }
+          }
+        }
+      }
+    },
+    "cursor": {
+      "type": "boolean",
+      "description": "Reserved: visible cursor + click ripples (not yet implemented)"
+    },
+    "loginDetect": {
+      "type": "string",
+      "description": "Substring/regex of URLs that mean 'we got bounced to a login page'. Set this when using storageState and the app's login URL doesn't match the default heuristic (sign-in|login|auth)."
+    },
+    "beats": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": [
+              "integer",
+              "string"
+            ]
+          },
+          "page": {
+            "type": "string",
+            "description": "Path relative to baseUrl (or absolute URL). Navigates when it differs from the previous beat."
+          },
+          "text": {
+            "type": "string",
+            "description": "Narration for this beat \u2014 TTS-clean (see references/tts-rules.md)."
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "fn"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "fn": {
+                  "enum": [
+                    "waitFor",
+                    "wait",
+                    "scrollToEl",
+                    "hl",
+                    "unhl",
+                    "clickEl",
+                    "expand",
+                    "navigate"
+                  ]
+                },
+                "sel": {
+                  "type": [
+                    "string",
+                    "array"
+                  ]
+                },
+                "opts": {
+                  "type": "object",
+                  "additionalProperties": true
+                },
+                "ms": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

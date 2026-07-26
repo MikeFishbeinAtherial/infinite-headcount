@@ -1,0 +1,15 @@
+{
+  "name": "auto-loom",
+  "version": "2.0.0",
+  "type": "module",
+  "description": "Turn any web app into a narrated, self-clicking demo MP4 — agent-recorded, ElevenLabs-voiced, ffmpeg-assembled",
+  "scripts": {
+    "setup": "bash scripts/setup.sh",
+    "doctor": "node scripts/doctor.mjs",
+    "validate": "node scripts/validate.mjs",
+    "run": "node scripts/run.mjs"
+  },
+  "dependencies": {
+    "playwright": "1.61.1"
+  }
+}

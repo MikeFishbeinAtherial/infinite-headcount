@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "title": "auto-loom smoke test",
+    "slug": "smoke",
+    "cta": "Point auto-loom at your own app next.",
+    "targetLengthSec": 15
+  },
+  "baseUrl": "https://example.com",
+  "viewport": { "width": 1280, "height": 720 },
+  "beats": [
+    {
+      "id": 1,
+      "page": "/",
+      "text": "This is auto-loom recording its own smoke test. No screen recorder is running.",
+      "actions": [
+        { "fn": "waitFor", "sel": "h1" },
+        { "fn": "hl", "sel": "h1" }
+      ]
+    },
+    {
+      "id": 2,
+      "page": "/",
+      "text": "The highlight, the narration, and the timing all came from one J-S-O-N file. You are ready to record your own app.",
+      "actions": [
+        { "fn": "hl", "sel": "p" }
+      ]
+    }
+  ]
+}
